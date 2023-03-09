@@ -1,7 +1,5 @@
 import ninowin
-import ninotext
 import ninonav
-import sequtils
 import os
 
 let
@@ -22,13 +20,13 @@ proc draw (b:var Boxy) =
 
 proc initNinoWin() =
   addImage(bg)
-  addCall(newCall("ninowin",keyboard,mouse,draw,nil))
+  addCall(newCall("ninoview",keyboard,mouse,draw,nil))
   initNinoNav()
-  initNinoText()
+#  initNinoText()
   window.visible = true
 
 initNinoWin()
 while not window.closeRequested:
   sleep(30)
   pollEvents()
-  for call in calls.filterIt(it.cycle != nil): call.cycle()
+  #for call in calls.filterIt(it.cycle != nil): call.cycle()
