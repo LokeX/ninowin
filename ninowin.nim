@@ -47,8 +47,8 @@ let
     visible = false
   )
   scr = getScreens()[0]
-  scrWidth* = cast[int32](scr.right)
-  scrHeight* = cast[int32](scr.bottom)
+  scrWidth* = (int32)scr.right
+  scrHeight* = (int32)scr.bottom
   winWidth* = scrWidth-(scrWidth div 20)
   winHeight* = scrHeight-(scrHeight div 8)
   boxyScale*: float = scrWidth/1920
